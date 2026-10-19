@@ -1,0 +1,14 @@
+# Python & Virtual Environments
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ML Tracking
+mlruns/
+mlflow.db
+*.db
+
+# OS / IDE
+.vscode/
+.env

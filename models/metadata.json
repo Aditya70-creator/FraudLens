@@ -1,0 +1,67 @@
+{
+  "winning_model": "LogisticRegression_Baseline",
+  "optimal_threshold": 0.9999,
+  "features": [
+    "transaction_amount",
+    "distance_from_home",
+    "hour_of_day",
+    "device_risk_score",
+    "velocity_last_1h",
+    "is_international",
+    "previous_fraud_count",
+    "account_age_days"
+  ],
+  "leaderboard": {
+    "LogisticRegression_Baseline": {
+      "pr_auc": 1.0,
+      "f1_score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "optimal_threshold": 0.9999,
+      "confusion_matrix": [
+        [
+          1576,
+          0
+        ],
+        [
+          0,
+          24
+        ]
+      ]
+    },
+    "RandomForest": {
+      "pr_auc": 1.0,
+      "f1_score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "optimal_threshold": 0.9867,
+      "confusion_matrix": [
+        [
+          1576,
+          0
+        ],
+        [
+          0,
+          24
+        ]
+      ]
+    },
+    "XGBoost": {
+      "pr_auc": 1.0,
+      "f1_score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "optimal_threshold": 0.9998,
+      "confusion_matrix": [
+        [
+          1576,
+          0
+        ],
+        [
+          0,
+          24
+        ]
+      ]
+    }
+  }
+}
