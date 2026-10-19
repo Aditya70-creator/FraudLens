@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="920" height="240">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="50%" stop-color="#2e1065" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <style>
+      .pulse-ring { animation: pulseAnim 3s infinite ease-out; transform-origin: 765px 125px; }
+      .blink-dot { animation: blink 1.6s infinite ease-in-out; }
+      .bar-risk { animation: barAnim 2.8s infinite ease-in-out; }
+      @keyframes pulseAnim {
+        0% { r: 12px; opacity: 0.9; }
+        100% { r: 74px; opacity: 0; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.25; }
+      }
+      @keyframes barAnim {
+        0%, 100% { width: 68px; }
+        50% { width: 38px; }
+      }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="916" height="236" rx="16" fill="url(#bgGrad)" stroke="#581c87" stroke-width="2" />
+  <rect x="10" y="2" width="900" height="4" rx="2" fill="url(#accentGrad)" />
+
+  <line x1="2" y1="60" x2="918" y2="60" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6" />
+  <line x1="2" y1="120" x2="918" y2="120" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6" />
+  <line x1="2" y1="180" x2="918" y2="180" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6" />
+  <line x1="540" y1="6" x2="540" y2="234" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6" />
+
+  <rect x="42" y="26" width="184" height="26" rx="13" fill="#3b0764" stroke="#c084fc" stroke-width="1.2" />
+  <circle class="blink-dot" cx="58" cy="39" r="4.5" fill="#c084fc" />
+  <text x="72" y="43" fill="#e9d5ff" font-family="Consolas, monospace" font-size="11" font-weight="bold">FINTECH RISK ENGINE</text>
+
+  <text x="42" y="96" fill="#f8fafc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="bold">Fraud</text>
+  <text x="155" y="96" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="bold">Lens</text>
+
+  <text x="42" y="126" fill="#e2e8f0" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold">Financial Anomaly Detection and A/B Shadow Engine</text>
+  <text x="42" y="152" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="12.5">Cost-Matrix Thresholding  |  Champion-Challenger Router  |  SHAP Reason Codes</text>
+
+  <g transform="translate(42, 176)" font-family="Consolas, monospace" font-size="11" font-weight="bold">
+    <rect x="0" y="0" width="82" height="26" rx="6" fill="#0f172a" stroke="#c084fc" stroke-width="1.2" />
+    <text x="41" y="17" fill="#c084fc" text-anchor="middle">Python 3.11</text>
+
+    <rect x="90" y="0" width="96" height="26" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="138" y="17" fill="#38bdf8" text-anchor="middle">Scikit-Learn</text>
+
+    <rect x="194" y="0" width="64" height="26" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1.2" />
+    <text x="226" y="17" fill="#34d399" text-anchor="middle">SHAP</text>
+
+    <rect x="266" y="0" width="74" height="26" rx="6" fill="#0f172a" stroke="#c084fc" stroke-width="1.2" />
+    <text x="303" y="17" fill="#e9d5ff" text-anchor="middle">FastAPI</text>
+
+    <rect x="348" y="0" width="70" height="26" rx="6" fill="#0f172a" stroke="#f472b6" stroke-width="1.2" />
+    <text x="383" y="17" fill="#f9a8d4" text-anchor="middle">MLflow</text>
+  </g>
+
+  <g transform="translate(560, 62)">
+    <rect x="0" y="0" width="112" height="118" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
+    <text x="12" y="22" fill="#94a3b8" font-family="Consolas, monospace" font-size="9.5" font-weight="bold">RISK SCORE WIDGET</text>
+    <rect class="bar-risk" x="12" y="38" width="68" height="10" rx="5" fill="#f43f5e" />
+    <rect class="bar-risk" x="12" y="58" width="52" height="10" rx="5" fill="#c084fc" />
+    <rect class="bar-risk" x="12" y="78" width="78" height="10" rx="5" fill="#34d399" />
+  </g>
+
+  <circle cx="765" cy="125" r="74" fill="none" stroke="#2e1065" stroke-width="1.5" />
+  <circle cx="765" cy="125" r="50" fill="none" stroke="#4c1d95" stroke-width="1" stroke-dasharray="4,4" />
+  <circle class="pulse-ring" cx="765" cy="125" r="14" fill="none" stroke="#c084fc" stroke-width="2" />
+  <circle cx="765" cy="125" r="11" fill="#0f172a" stroke="#c084fc" stroke-width="2.5" />
+  <circle class="blink-dot" cx="765" cy="125" r="4" fill="#34d399" />
+</svg>
