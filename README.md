@@ -96,14 +96,14 @@ Fraud detection errors have different financial consequences.
 - **True Positive (TP):** A fraudulent transaction is correctly identified.
 - **True Negative (TN):** A legitimate transaction is correctly classified.
 
+
 A cost-sensitive evaluation can estimate the expected loss:
 
-\[
-\text{Expected Cost} =
-C_{FN}\cdot FN + C_{FP}\cdot FP
-\]
+$$
+\text{Expected Cost} = C_{FN} \times FN + C_{FP} \times FP
+$$
 
-Here, \(C_{FN}\) and \(C_{FP}\) represent the assigned costs of false negatives and false positives.
+Here, $C_{FN}$ and $C_{FP}$ represent the assigned costs of false negatives and false positives.
 
 The threshold can then be selected to minimize the chosen cost function on validation data. The cost assumptions should reflect the intended business scenario rather than arbitrary values.
 
