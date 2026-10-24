@@ -1,0 +1,9 @@
+mkdir -Force .streamlit
+@"
+[theme]
+primaryColor = "#a855f7"
+backgroundColor = "#090d16"
+secondaryBackgroundColor = "#111827"
+textColor = "#f8fafc"
+font = "sans serif"
+"@ | Set-Content -Path .streamlit/config.toml -Encoding UTF8
