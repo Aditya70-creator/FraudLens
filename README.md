@@ -1,36 +1,55 @@
 # 🕵️ FraudLens — Cost-Aware Financial Fraud Detection & MLOps
 
 <div align="center">
+
   <img src="./assets/fraud-banner.svg" alt="FraudLens Animated Banner" width="100%" />
 
   <br/><br/>
 
+  <a href="https://fraudlens-7qbkui3wexmjpsmp8z7pm8.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀_Launch_Live_Platform-Streamlit_Cloud-00f2fe?style=for-the-badge&logo=streamlit&logoColor=white" alt="Launch FraudLens Live Platform" />
+  </a>
+
+  <br/><br/>
+
   ![CI Pipeline](https://github.com/Aditya70-creator/FraudLens/actions/workflows/ci.yml/badge.svg)
-  ![Python](https://img.shields.io/badge/Python-3.11-c084fc?style=flat-square&logo=python&logoColor=white)
-  ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.5-38bdf8?style=flat-square&logo=scikit-learn&logoColor=white)
-  ![MLflow](https://img.shields.io/badge/MLflow-Experiment_Tracking-f472b6?style=flat-square&logo=mlflow&logoColor=white)
+  ![Python](https://img.shields.io/badge/Python-3.11-38bdf8?style=flat-square&logo=python&logoColor=white)
+  ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.5-10b981?style=flat-square&logo=scikit-learn&logoColor=white)
+  ![MLflow](https://img.shields.io/badge/MLflow-Experiment_Tracking-818cf8?style=flat-square&logo=mlflow&logoColor=white)
+  ![SHAP](https://img.shields.io/badge/Explainability-SHAP-c084fc?style=flat-square)
   ![License](https://img.shields.io/badge/License-MIT-fbbf24?style=flat-square)
+
 </div>
+
+---
+
+## 🌐 Live Interactive Deployment
+
+Explore FraudLens directly in your browser.
+
+**[🚀 Launch FraudLens Live Platform](https://fraudlens-7qbkui3wexmjpsmp8z7pm8.streamlit.app/)**
+
+FraudLens focuses on financial fraud detection, cost-sensitive classification, interpretable predictions, and model evaluation.
 
 ---
 
 ## 📌 Overview
 
-**FraudLens** is a tabular machine learning and MLOps project designed to detect fraudulent financial transactions in highly imbalanced datasets.
+**FraudLens** is a cost-aware machine learning and MLOps project designed to detect potentially fraudulent financial transactions in highly imbalanced datasets.
 
-Instead of relying solely on accuracy, it focuses on cost-sensitive decision-making, precision-recall evaluation, explainable predictions, and Champion-versus-Challenger model comparison.
+Instead of relying solely on accuracy, FraudLens combines precision-recall evaluation, business cost-sensitive threshold optimization, explainable predictions, and Champion-versus-Challenger model evaluation.
 
-The project brings together machine learning, financial risk analysis, model explainability, and experiment tracking in a unified workflow.
+The project demonstrates how machine learning can support financial risk analysis through reproducible experiments, transparent evaluation, and interpretable predictions.
 
 ### 🎯 Project Objectives
 
 - Detect potentially fraudulent transactions under severe class imbalance.
 - Compare classification models using appropriate evaluation metrics.
 - Optimize decision thresholds based on the financial cost of classification errors.
-- Explain model predictions using SHAP feature attributions.
-- Evaluate challenger models against a champion model.
-- Track experiments, performance metrics, and model artifacts with MLflow.
-- Support reproducible training, testing, and deployment workflows.
+- Explain individual predictions using SHAP feature attributions.
+- Evaluate challenger models against a preferred champion model.
+- Track experiment parameters, metrics, and artifacts using MLflow.
+- Support reproducible training, testing, and evaluation workflows.
 
 ---
 
@@ -43,87 +62,113 @@ The project brings together machine learning, financial risk analysis, model exp
 ### System Architecture
 
 ```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "darkMode": true,
+    "background": "#0d1117",
+    "primaryColor": "#0f172a",
+    "primaryTextColor": "#ffffff",
+    "primaryBorderColor": "#38bdf8",
+    "lineColor": "#94a3b8",
+    "textColor": "#f8fafc",
+    "mainBkg": "#0f172a",
+    "nodeBorder": "#38bdf8",
+    "clusterBkg": "#0f172a",
+    "clusterBorder": "#334155"
+  }
+}}%%
 flowchart TD
-    A["Financial Transaction Data"] --> B["Feature Engineering"]
-    B --> C["Data Validation & Preprocessing"]
+    A["Financial Transaction Data"] --> B["Data Validation & Feature Engineering"]
+    B --> C["Leak-Free Preprocessing"]
     C --> D["Champion Model"]
-    C --> E["Challenger Model"]
+    C --> E["Challenger Models"]
     D --> F["Cost-Sensitive Threshold Optimization"]
-    D --> G["SHAP Explanations & Reason Codes"]
+    D --> G["SHAP Feature Attribution"]
     E --> H["Comparative Model Evaluation"]
     F --> I["Fraud Risk Prediction"]
     G --> I
     H --> J["MLflow Experiment Tracking"]
-    I --> K["Prediction & Evaluation Outputs"]
+    I --> K["Prediction & Evaluation Results"]
 
     style A fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#ffffff
     style B fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff
     style C fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff
     style D fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#ffffff
-    style E fill:#1e1b4b,stroke:#fbbf24,stroke-width:2px,color:#ffffff
-    style F fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#ffffff
+    style E fill:#0f172a,stroke:#fbbf24,stroke-width:2px,color:#ffffff
+    style F fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#ffffff
     style G fill:#1e1b4b,stroke:#c084fc,stroke-width:2px,color:#ffffff
-    style H fill:#1e1b4b,stroke:#c084fc,stroke-width:2px,color:#ffffff
+    style H fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff
     style I fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#ffffff
     style J fill:#0f172a,stroke:#f472b6,stroke-width:2px,color:#ffffff
     style K fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#ffffff
 ```
 
-The architecture separates data preparation, model training, threshold optimization, explainability, and evaluation. The actual implementation may use a different execution order or deployment design depending on the repository code.
+The pipeline separates data preparation, model training, threshold selection, explainability, and evaluation. MLflow supports experiment tracking and reproducibility.
 
 ---
 
-## 🔧 Core Engineering Capabilities
+## 🔧 Core ML & MLOps Capabilities
 
-### 1. Extreme Class Imbalance Optimization
+### 1. Imbalanced Classification & Threshold Calibration
 
-Fraudulent transactions often represent only a small fraction of all transactions. Consequently, a model can achieve high accuracy while missing a substantial number of fraud cases.
+Fraudulent transactions often represent a small proportion of all transactions. High accuracy alone can therefore conceal poor fraud detection performance.
 
 FraudLens emphasizes:
 
 - Precision-Recall AUC (PR-AUC).
-- Fraud detection recall.
-- Precision and false-positive analysis.
+- Fraud detection precision and recall.
+- False-positive analysis.
 - Decision-threshold calibration.
-- Comparison of candidate classification models.
+- Comparative evaluation of candidate models.
 
 ### 2. Business Cost-Matrix Optimization
 
 Fraud detection errors have different financial consequences.
 
-- **False Negative (FN):** A fraudulent transaction is classified as legitimate.
-- **False Positive (FP):** A legitimate transaction is incorrectly flagged as fraudulent.
-- **True Positive (TP):** A fraudulent transaction is correctly identified.
-- **True Negative (TN):** A legitimate transaction is correctly classified.
+| Outcome | Meaning |
+|---|---|
+| False Negative (FN) | Fraudulent transaction classified as legitimate. |
+| False Positive (FP) | Legitimate transaction incorrectly flagged as fraudulent. |
+| True Positive (TP) | Fraudulent transaction correctly identified. |
+| True Negative (TN) | Legitimate transaction correctly classified. |
 
+The basic classification-error cost function is:
 
-A cost-sensitive evaluation can estimate the expected loss:
+\[
+\text{Expected Cost} = C_{FN}\times FN + C_{FP}\times FP
+\]
 
-$$
-\text{Expected Cost} = C_{FN} \times FN + C_{FP} \times FP
-$$
+Here, \(C_{FN}\) and \(C_{FP}\) represent the assigned costs of false negatives and false positives.
 
-Here, $C_{FN}$ and $C_{FP}$ represent the assigned costs of false negatives and false positives.
-
-The threshold can then be selected to minimize the chosen cost function on validation data. The cost assumptions should reflect the intended business scenario rather than arbitrary values.
+The decision threshold can be selected to minimize the chosen cost function on validation data, using assumptions appropriate to the business scenario.
 
 ### 3. Champion-versus-Challenger Evaluation
 
-A Champion-versus-Challenger workflow compares an established model with one or more candidate models.
+FraudLens uses the Champion-versus-Challenger approach to compare a preferred model against alternative candidates.
 
-The champion represents the current preferred model, while challenger models are evaluated for potential improvements in fraud detection performance, expected cost, and inference latency.
+Evaluation can consider:
 
-A true shadow deployment requires additional infrastructure to copy incoming requests to challenger models without allowing challenger predictions to affect customer-facing decisions.
+- PR-AUC and F1-score.
+- Fraud detection recall and precision.
+- Expected classification cost.
+- False-positive rate.
+- Inference latency, where measured.
 
-If the repository currently performs offline model comparison only, describe it as Champion-versus-Challenger evaluation rather than claiming production shadow routing.
+A challenger should replace the champion only when the evaluation supports the change under the selected performance and cost constraints.
 
-### 4. SHAP Explainability & Reason Codes
+### 4. Explainable AI with SHAP
 
-SHAP helps explain how individual input features contribute to a model prediction.
+SHAP (SHapley Additive exPlanations) helps explain how individual input features contribute to model predictions.
 
-For fraud analysis, feature attributions can help reviewers investigate which transaction characteristics influenced the model's risk score.
+Key applications include:
 
-These explanations are intended to support analysis and auditing. They do not independently prove that a transaction is fraudulent.
+- Understanding the factors behind a transaction's risk score.
+- Investigating feature contributions.
+- Supporting model analysis and auditing.
+- Improving prediction interpretability.
+
+SHAP explanations support investigation; they do not independently prove that a transaction is fraudulent.
 
 ### 5. MLflow Experiment Tracking
 
@@ -134,8 +179,6 @@ MLflow supports reproducible experimentation by recording information such as:
 - Experiment runs and comparisons.
 - Model artifacts and associated metadata.
 
-The exact logged fields depend on the training pipeline implementation.
-
 ---
 
 ## 📊 Evaluation Metrics
@@ -143,22 +186,22 @@ The exact logged fields depend on the training pipeline implementation.
 | Metric | Purpose |
 |---|---|
 | **PR-AUC** | Evaluates precision-recall performance under class imbalance. |
-| **Recall@Fixed-FPR** | Measures the proportion of fraud detected at a specified false-positive rate. |
-| **Precision** | Measures the proportion of flagged transactions that are actually fraudulent. |
+| **Recall at Fixed FPR** | Measures fraud detection recall at a specified false-positive rate. |
+| **Precision** | Measures the proportion of flagged transactions that are fraudulent. |
 | **Recall** | Measures the proportion of actual fraudulent transactions detected. |
-| **F1-Score** | Balances precision and recall using their harmonic mean. |
-| **Expected Cost** | Estimates the financial impact of false positives and false negatives. |
+| **F1-Score** | Balances precision and recall. |
+| **Expected Cost** | Estimates the financial impact of classification errors. |
 | **Inference Latency** | Measures the time required to produce predictions. |
 
 ### Why These Metrics Matter
 
-- High recall helps reduce missed fraudulent transactions.
-- High precision helps limit unnecessary declines or manual reviews.
-- PR-AUC is useful when fraud cases are relatively rare.
-- Expected cost connects model performance to business impact.
-- Recall at a fixed false-positive rate evaluates fraud detection under an operational constraint.
+- **Recall** helps quantify missed fraudulent transactions.
+- **Precision** helps assess unnecessary transaction flags and manual reviews.
+- **PR-AUC** is useful when fraudulent transactions are relatively rare.
+- **Expected Cost** connects model performance to business impact.
+- **Recall at Fixed FPR** evaluates fraud detection under operational constraints.
 
-The evaluation report should document the test split, fraud-class definition, cost assumptions, and threshold-selection procedure.
+Thresholds should be selected using validation data rather than the final test set. Reported results should document the evaluation split and cost assumptions.
 
 ---
 
@@ -167,18 +210,18 @@ The evaluation report should document the test split, fraud-class definition, co
 | Component | Technology | Purpose |
 |---|---|---|
 | Programming Language | Python 3.11 | Core application and ML pipeline |
+| Data Processing | Pandas, NumPy | Data preparation and feature engineering |
 | Machine Learning | Scikit-learn | Preprocessing, classification, and evaluation |
 | Gradient Boosting | XGBoost, if configured | Candidate fraud classifier |
 | Anomaly Detection | Isolation Forest, if configured | Unsupervised anomaly scoring |
 | Explainable AI | SHAP | Feature attribution |
 | Experiment Tracking | MLflow | Experiment metrics and artifacts |
-| API | FastAPI, if implemented | REST-based inference |
-| Validation | Pydantic, if implemented | API input validation |
-| Testing | Pytest | Automated tests |
-| Containerization | Docker, if configured | Reproducible runtime |
+| Dashboard | Streamlit | Interactive application |
+| API & Validation | FastAPI, Pydantic, if implemented | REST inference and request validation |
+| Testing | Pytest | Automated testing |
 | CI/CD | GitHub Actions, if configured | Automated validation |
 
-*Keep the technology badges and stack entries aligned with the dependencies and features actually implemented in the repository.*
+Keep the technology stack aligned with the dependencies and features actually implemented in the repository.
 
 ---
 
@@ -188,44 +231,43 @@ The evaluation report should document the test split, fraud-class definition, co
 FraudLens/
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                 # GitHub Actions workflow, if configured
+│       └── ci.yml
 ├── api/
-│   └── main.py                    # API endpoints, if implemented
+│   └── main.py
 ├── app/
-│   └── dashboard.py               # Dashboard, if implemented
+│   └── dashboard.py
 ├── assets/
-│   ├── fraud-banner.svg           # Animated repository banner
-│   └── fraud-pipeline.svg         # Pipeline illustration
+│   ├── fraud-banner.svg
+│   └── fraud-pipeline.svg
 ├── data/
-│   └── raw/                       # Source or generated datasets
-├── models/                        # Saved models and metadata
+│   └── raw/
+├── models/
 ├── src/
 │   ├── data/
-│   │   └── generate_data.py       # Synthetic transaction generation
+│   │   └── generate_data.py
 │   ├── models/
-│   │   └── train.py               # Model training and evaluation
+│   │   └── train.py
 │   └── monitoring/
-│       └── drift.py               # Optional model/data monitoring
+│       └── drift.py
 ├── tests/
-│   └── test_api.py                # API tests, if implemented
-├── Dockerfile                     # Optional container configuration
-├── requirements.txt               # Python dependencies
+│   └── test_api.py
+├── requirements.txt
 ├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
-*This is an illustrative project layout based on the supplied commands and architecture. Remove entries that do not exist in the actual repository, or update the structure to match the implementation.*
+This is an illustrative layout based on the existing README. Update it to match the actual repository files.
 
 ---
 
-## 🚀 Quickstart & Local Execution
+## 💻 Local Setup & Execution
 
 ### Prerequisites
 
 - Git
 - Python 3.11
 - pip
-- A compatible operating system
 
 ### 1. Clone the Repository
 
@@ -250,37 +292,28 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-If PowerShell blocks virtual environment activation, use the environment's Python executable directly:
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
 ### 3. Install Dependencies
-
-If the virtual environment is activated:
 
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Generate Synthetic Transaction Data
+### 4. Generate Transaction Data
+
+If the repository includes the synthetic data generator:
 
 ```bash
 python -m src.data.generate_data
 ```
 
-This step assumes the repository contains `src/data/generate_data.py` and that it generates the data files expected by the training pipeline.
-
 ### 5. Train and Evaluate Models
+
+If the training module is available:
 
 ```bash
 python -m src.models.train
 ```
-
-The training script should prepare the data, train the configured models, evaluate their performance, and log experiment information where MLflow tracking is configured.
 
 ### 6. Run Automated Tests
 
@@ -288,78 +321,43 @@ The training script should prepare the data, train the configured models, evalua
 pytest -v
 ```
 
-Investigate any failing tests before treating the implementation as validated.
-
-### 7. Start the FastAPI Server
-
-If the repository implements `api/main.py` with a FastAPI application object named `app`, run:
-
-```bash
-uvicorn api.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-Open Swagger UI:
-
-http://127.0.0.1:8000/docs
-
-If the repository does not contain this API module yet, use the actual entry point implemented in the project.
-
----
-
-## 🐳 Docker Deployment
-
-If the repository contains a working `Dockerfile`, build the image from the project root:
-
-```powershell
-docker build -t fraudlens .
-```
-
-Run the container:
-
-```powershell
-docker run --rm -p 8000:8000 fraudlens
-```
-
-For a FastAPI service, ensure the container starts the correct ASGI application and binds to `0.0.0.0` inside the container.
-
-The Docker image must include the required dependencies and either the necessary model artifacts or a reliable model-loading process.
+Use the entry points present in the repository if the implementation differs from these examples.
 
 ---
 
 ## 🔬 Reproducibility & Engineering Practices
 
-FraudLens is designed around practical machine learning engineering principles:
+FraudLens emphasizes practical machine learning engineering principles:
 
-- **Data leakage prevention:** Fit preprocessing transformations on training data only.
-- **Validation-based threshold selection:** Tune thresholds on validation data rather than the final test set.
-- **Cost transparency:** Document the assumed financial cost of each classification error.
-- **Reproducibility:** Record relevant parameters, seeds, metrics, and model versions.
-- **Model consistency:** Apply the same preprocessing transformations during training and inference.
-- **Automated testing:** Test input validation, model behavior, and important edge cases.
-- **Experiment tracking:** Keep benchmark results connected to their corresponding training runs.
-- **Security:** Avoid committing sensitive transaction data, credentials, or secrets.
+- **Leakage prevention:** Fit preprocessing transformations on training data only.
+- **Validation-based threshold selection:** Avoid tuning thresholds on the final test set.
+- **Cost transparency:** Document assumptions for classification errors.
+- **Reproducibility:** Record parameters, random seeds, metrics, and model versions.
+- **Model consistency:** Reuse preprocessing transformations during training and inference.
+- **Automated testing:** Validate model behavior and important edge cases.
+- **Experiment tracking:** Connect benchmark results to corresponding training runs.
+- **Security:** Never commit sensitive transaction data, credentials, or secrets.
 
 ---
 
 ## 🗺️ Engineering Roadmap
 
-The following checklist describes the intended development milestones. Mark each item complete only after confirming that the implementation exists and works.
+Mark milestones complete only after confirming that the implementation exists and works.
 
 - [ ] Transaction dataset preparation and validation
-- [ ] Synthetic fraud-data generation, if applicable
+- [ ] Synthetic fraud-data generation, where applicable
 - [ ] Leak-free preprocessing pipeline
 - [ ] Baseline model training and evaluation
-- [ ] Class imbalance handling
+- [ ] Class-imbalance handling
 - [ ] Precision-recall threshold calibration
 - [ ] Business cost-matrix optimization
 - [ ] Champion-versus-Challenger model comparison
 - [ ] SHAP-based prediction explanations
 - [ ] MLflow experiment tracking
-- [ ] FastAPI inference service, if included
+- [ ] Documented benchmark results
 - [ ] Automated Pytest suite
 - [ ] GitHub Actions CI workflow
-- [ ] Dockerized deployment, if included
-- [ ] Documented benchmark results and reproducible evaluation
+- [ ] Reproducible end-to-end execution
 
 ---
 
@@ -372,7 +370,7 @@ FraudLens is intended for educational, research, and defensive financial-risk ap
 - Treat predictions as risk indicators rather than definitive proof of fraud.
 - Evaluate false positives and false negatives before operational use.
 - Document threshold and cost assumptions.
-- Apply appropriate access controls and monitoring before deploying a fraud detection service.
+- Apply appropriate access controls before real-world deployment.
 
 ---
 
@@ -386,23 +384,28 @@ Contributions, bug reports, and improvement suggestions are welcome.
 4. Run the relevant tests.
 5. Submit a pull request with a clear description.
 
-Include tests when changing model behavior, evaluation logic, or API contracts.
+Include tests when changing model behavior or evaluation logic.
+
+---
 
 ## 📄 License
 
-This project uses the MIT License if a valid MIT `LICENSE` file is included in the repository.
+This project uses the MIT License. See [`LICENSE`](./LICENSE) for the license terms.
 
-See [`LICENSE`](./LICENSE) for the license terms.
+---
 
 ## 👨‍💻 Author
 
 **Aditya Mitra**
 
-- GitHub: [@Aditya70-creator](https://github.com/Aditya70-creator)
-- Repository: [FraudLens](https://github.com/Aditya70-creator/FraudLens)
+- **GitHub:** [@Aditya70-creator](https://github.com/Aditya70-creator)
+- **Repository:** [FraudLens](https://github.com/Aditya70-creator/FraudLens)
+- **Live Application:** [FraudLens on Streamlit Cloud](https://fraudlens-7qbkui3wexmjpsmp8z7pm8.streamlit.app/)
 
 ---
 
 <div align="center">
-  <b>Building cost-aware, explainable, and reproducible fraud detection systems.</b>
+
+  **Building cost-aware, explainable, and reproducible fraud detection systems.**
+
 </div>
