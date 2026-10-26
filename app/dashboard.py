@@ -77,9 +77,12 @@ st.markdown(
     }
     .kpi-value {
         color: #f8fafc;
-        font-size: 1.65rem;
+        font-size: 1.3rem;
         font-weight: 800;
         margin-top: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .kpi-sub {
         color: #34d399;
