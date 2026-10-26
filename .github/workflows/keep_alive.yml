@@ -1,0 +1,32 @@
+name: Keep FraudLens App Awake (24x7)
+
+on:
+  schedule:
+    # Runs automatically every 6 hours to prevent Streamlit sleep mode
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  ping-fraudlens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Ping FraudLens App
+        run: |
+          python -c "
+          import requests
+          url = 'https://fraudlens-7qbkui3wexmjpsmp8z7pm8.streamlit.app/'
+          try:
+              response = requests.get(url, timeout=30)
+              print(f'Ping successful! Status code: {response.status_code}')
+          except Exception as e:
+              print(f'Ping failed with error: {e}')
+              exit(1)
+          "
